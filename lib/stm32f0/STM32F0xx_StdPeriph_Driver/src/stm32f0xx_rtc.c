@@ -308,9 +308,8 @@ static uint8_t RTC_Bcd2ToByte(uint8_t Value);
   */
 ErrorStatus RTC_DeInit(void)
 {
-  __IO uint32_t wutcounter = 0x00;
   ErrorStatus status = ERROR;
-  
+
   /* Disable the write protection for RTC registers */
   RTC->WPR = 0xCA;
   RTC->WPR = 0x53;
@@ -319,7 +318,7 @@ ErrorStatus RTC_DeInit(void)
   if (RTC_EnterInitMode() == ERROR)
   {
     status = ERROR;
-  }  
+  }
   else
   {
     /* Reset TR, DR and CR registers */

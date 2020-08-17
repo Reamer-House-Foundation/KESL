@@ -20,7 +20,6 @@ core := core
 all: $(core) $(libraries) $(mpu)
 
 $(core) $(libraries) $(mpu):
-	@echo $(INCLUDE)
 	$(MAKE) --directory=$@
 
 clean:
