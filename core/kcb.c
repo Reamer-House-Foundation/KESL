@@ -39,6 +39,10 @@ status_t kcb_init (kcb_t *buf, uint32_t size) {
     if (!buf) {
         return STATUS_ERROR;
     }
+    if (size != BUFFER_SIZE) {
+        printf("Dynamic sized KCBs are not supported at this time\n");
+        return STATUS_ERROR;
+    }
 
     buf->read = 0;
     buf->write= 0;
