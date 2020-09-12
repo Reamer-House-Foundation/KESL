@@ -7,10 +7,10 @@ MPU := stm32f0
 all: $(MPU)
 
 $(MPU):
-	$(MAKE) --directory $@
+	@$(MAKE) --directory $@
 
 clean:
-	for dir in $(MPU);\
+	@for dir in $(MPU);\
 	do\
 	 $(MAKE) --directory $${dir} clean;\
 	done

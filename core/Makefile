@@ -8,11 +8,11 @@ OBJS = $(patsubst %.c,$(OBJECT_DIR)/%.o,$(SRCS))
 all: $(OBJS)
 
 objs/%.o: %.c objs
-	$(CC) $(CFLAGS) $(INCLUDE) -c -o $@ $^
+	@$(CC) $(CFLAGS) $(INCLUDE) -c -o $@ $^
 
 $(OBJECT_DIR):
-	mkdir $@
+	@mkdir $@
 
 clean:
-	rm -f $(OBJS)
-	rm -r $(OBJECT_DIR)
+	@rm -f $(OBJS)
+	@rm -r $(OBJECT_DIR)

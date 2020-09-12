@@ -20,10 +20,10 @@ core := core
 all: $(core) $(libraries) $(mpu)
 
 $(core) $(libraries) $(mpu):
-	$(MAKE) --directory=$@
+	@$(MAKE) --directory=$@
 
 clean:
-	for dir in $(core) $(libraries) $(mpu);\
+	@for dir in $(core) $(libraries) $(mpu);\
 	do\
 	 $(MAKE) --directory=$${dir} clean;\
 	done

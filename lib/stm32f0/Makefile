@@ -24,14 +24,14 @@ OBJS = $(patsubst %.c,$(OBJECT_DIR)/%.o,$(SRCS))
 all: libstm32f0.a
 
 $(OBJECT_DIR)/%.o: %.c objs
-	$(CC) $(CFLAGS) $(INCLUDE) -c -o $@ $^
+	@$(CC) $(CFLAGS) $(INCLUDE) -c -o $@ $^
 
 $(OBJECT_DIR):
-	mkdir $@
+	@mkdir $@
 
 libstm32f0.a: $(OBJS)
-	$(AR) -r $@ $(OBJS)
+	@$(AR) -r $@ $(OBJS)
 
 clean:
-	rm -f $(OBJS) libstm32f0.a
-	rm -r $(OBJECT_DIR)
+	@rm -f $(OBJS) libstm32f0.a
+	@rm -r $(OBJECT_DIR)

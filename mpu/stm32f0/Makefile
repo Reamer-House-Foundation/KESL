@@ -17,14 +17,14 @@ SOBJS += $(patsubst %.s,$(OBJECT_DIR)/%.o,$(SSRCS))
 all: $(OBJECT_DIR) $(COBJS) $(SOBJS)
 
 $(OBJECT_DIR)/%.o: $(SRC_DIR)/%.s
-	$(CC) $(CFLAGS) $(INCLUDE) -c -o $@ $^
+	@$(CC) $(CFLAGS) $(INCLUDE) -c -o $@ $^
 
 $(OBJECT_DIR)/%.o: $(SRC_DIR)/%.c
-	$(CC) $(CFLAGS) $(INCLUDE) -c -o $@ $^
+	@$(CC) $(CFLAGS) $(INCLUDE) -c -o $@ $^
 
 $(OBJECT_DIR):
-	mkdir $@
+	@mkdir $@
 
 clean:
-	rm -f $(COBJS) $(SOBJS)
-	rm -r $(OBJECT_DIR)
+	@rm -f $(COBJS) $(SOBJS)
+	@rm -r $(OBJECT_DIR)

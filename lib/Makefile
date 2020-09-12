@@ -7,10 +7,10 @@ LIB := stm32f0
 all: $(LIB)
 
 $(LIB):
-	$(MAKE) --directory $@
+	@$(MAKE) --directory $@
 
 clean:
-	for dir in $(LIB);\
+	@for dir in $(LIB);\
 	do\
 	 $(MAKE) --directory $${dir} clean;\
 	done
